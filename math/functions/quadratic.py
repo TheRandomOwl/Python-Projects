@@ -4,7 +4,7 @@ try:
     A = float(input("Enter a number for A: "))
     B = float(input("Enter a number for B: "))
     C = float(input("Enter a number for C: "))
-except:
+except ValueError:
     print("Invalid input")
 else:
     ans1 = (-B + math.sqrt(B*B - 4*A*C)) / 2*A
