@@ -11,9 +11,10 @@ while True:
 while (a >= 1 and a > 0) or (a <= -1 and a < 0):
     if (a % 2 != 0 and a > 0):
         ans.append(b)
+        print(f"add {b}")
     elif (a % 2 != 0 and a < 0):
         ans.append(-b)
+        print(f"add {-b}")
     a = int(a/2)
     b *= 2
-print(ans)
 print(f"Answer: {sum(ans)}")
