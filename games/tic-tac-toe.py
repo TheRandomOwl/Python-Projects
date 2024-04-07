@@ -45,11 +45,11 @@ def check_win():
 for i in range(5):
     enter_move('Player 1','X')
     if check_win():
-        print("You win!")
+        print("Player 1 wins!")
         break
     if (i < 4): enter_move('Player 2','O') # prevent player 2 from getting stuck in loop
     if check_win():
-        print("You lose!")
+        print("Player 2 wins!")
         break
 else:
     print("Tie")
