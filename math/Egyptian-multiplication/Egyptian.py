@@ -15,6 +15,6 @@ while (a >= 1 and a > 0) or (a <= -1 and a < 0):
     elif (a % 2 != 0 and a < 0):
         ans.append(-b)
         print(f"add {-b}")
-    a = int(a/2)
+    a //= 2
     b *= 2
 print(f"Answer: {sum(ans)}")
