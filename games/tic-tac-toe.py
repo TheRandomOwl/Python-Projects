@@ -51,6 +51,5 @@ for i in range(5):
     if check_win():
         print("Player 2 wins!")
         break
-    print(''.join(grid[0]))
 else:
     print("Tie")
