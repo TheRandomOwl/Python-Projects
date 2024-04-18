@@ -27,7 +27,7 @@ def check_win():
     game_over = False
     # Check rows
     for row in grid:
-        if (row[0] == row[1] == row[2] and row[0] != ' '):
+        if ('OOO' in ''.join(row) or 'XXX' in ''.join(row)):
             game_over = True
 
     # Check columns
@@ -51,5 +51,6 @@ for i in range(5):
     if check_win():
         print("Player 2 wins!")
         break
+    print(''.join(grid[0]))
 else:
     print("Tie")
