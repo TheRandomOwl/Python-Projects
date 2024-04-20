@@ -79,7 +79,7 @@ def main():
         # calculate the critical points
         critical_points = solve([fx, fy], ["x", "y"], dict=True)
     except:
-        print("There are no critical points.")
+        print("Could not solve for critical points.")
         return
     
     second_derivative_test(critical_points,fxx,fyy,fxy,function)
