@@ -18,24 +18,28 @@ def second_derivative_test(points):
         fxy_val = fxy.subs(ans)
 
         determinant = fxx_val * fyy_val - fxy_val ** 2
+        # check if the determinant is not complex
+        if im(determinant).evalf() != 0:
+            continue
 
         if determinant > 0 and fxx_val > 0 and fyy_val > 0:
-            print(f"Local minimum at {ans} with determinant {determinant}")
+            print(f"Local minimum with determinant {determinant}:")
             pprint(ans)
-            #print(f"f({point[0]},{point[1]}) = {function.subs(ans)}")
+            pprint({"f(x,y)":function.subs(ans)})
         elif determinant > 0 and fxx_val < 0 and fyy_val < 0:
-            print(f"Local maximum at {ans} with determinant {determinant}")
+            print(f"Local maximum with determinant {determinant}:")
             pprint(ans)
-            #print(f"f({point[0]},{point[1]}) = {function.subs(ans)}")
+            pprint({"f(x,y)":function.subs(ans)})
         elif determinant < 0:
-            print(f"Saddle point at {ans} with determinant {determinant}")
+            print(f"Saddle point with determinant {determinant}:")
             pprint(ans)
-            #print(f"f({point[0]},{point[1]}) = {function.subs(ans)}")
+            pprint({"f(x,y)":function.subs(ans)})
         elif determinant == 0:
-            print(f"Indeterminate at {ans} with determinant {determinant}")
+            print(f"Indeterminate with determinant {determinant}:")
             pprint(ans)
+            pprint({"f(x,y)":function.subs(ans)})
 
-def print_partial_derivatives(f):
+def print_partial_derivatives():
     # print the first and second partial derivatives
     print("First partial derivative with respect to x:")
     pprint(fx)
@@ -52,11 +56,10 @@ def print_partial_derivatives(f):
     print("Mixed partial derivative with respect to x and y:")
     pprint(fxy)
 
-print_partial_derivatives(function)
+print_partial_derivatives()
 
 critical_points = solve([fx, fy], [x, y], dict=True)
-print(type(critical_points))
-print(critical_points)
+
 if len(critical_points) > 0:
     second_derivative_test(critical_points)
 else:
