@@ -12,6 +12,9 @@ fyy = diff(function, y, y)
 fxy = diff(function, x, y)
 
 def second_derivative_test(points):
+    if len(points) == 0:
+        print("There are no critical points.")
+        return
     for ans in points:
         fxx_val = fxx.subs(ans)
         fyy_val = fyy.subs(ans)
@@ -60,7 +63,4 @@ print_partial_derivatives()
 
 critical_points = solve([fx, fy], [x, y], dict=True)
 
-if len(critical_points) > 0:
-    second_derivative_test(critical_points)
-else:
-    print("There are no critical points")
+second_derivative_test(critical_points)
