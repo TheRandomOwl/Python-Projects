@@ -5,7 +5,6 @@ def second_derivative_test(points,fxx,fyy,fxy,f):
         print("There are no critical points.")
         return
     for ans in points:
-        #pprint(list(ans.items())[0])
         fxx_val = fxx.subs(ans)
         fyy_val = fyy.subs(ans)
         fxy_val = fxy.subs(ans)
