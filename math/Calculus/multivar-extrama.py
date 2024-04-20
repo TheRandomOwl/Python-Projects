@@ -3,18 +3,24 @@ from sympy import *
 x, y = symbols('x,y')
 while True:
     try:
-        function = parse_expr(input('Enter a function: '), transformations='all')
-        pprint(function)
-
-        # calculate the first and second partial derivatives
-        fx = diff(function, x)
-        fxx = diff(function, x, x)
-        fy = diff(function, y)
-        fyy = diff(function, y, y)
-        fxy = diff(function, x, y)
+        ## Ask user if input is correct
+        while True:
+            function = parse_expr(input('Enter a function: '), transformations='all')
+            print("Is this the function you want to use?:")
+            pprint(function)
+            ans = input("Enter 'y' or 'n': ").lower()
+            if ans == 'y':
+                break
         break
     except:
         print("Invalid input. Please try again.")
+
+# calculate the first and second partial derivatives
+fx = diff(function, x)
+fxx = diff(function, x, x)
+fy = diff(function, y)
+fyy = diff(function, y, y)
+fxy = diff(function, x, y)
 
 def second_derivative_test(points):
     if len(points) == 0:
