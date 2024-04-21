@@ -1,4 +1,4 @@
-from sympy import *
+from sympy import pprint, diff, solve, parse_expr, im
 
 def second_derivative_test(points,fxx,fyy,fxy,f):
     if len(points) == 0:
