@@ -21,7 +21,7 @@ def main():
     m1 = m1.subs({x:x_val, y:y_val, z:z_val})
     m2 = m2.subs({dx:dx_val, dy:dy_val, dz:dz_val})
     ans = m1*m2.T
-    pprint(ans)
+    pprint(ans.evalf())
 
 if __name__ == "__main__":
     main()
