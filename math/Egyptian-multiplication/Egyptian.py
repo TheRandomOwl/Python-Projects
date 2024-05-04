@@ -1,20 +1,18 @@
-# Egyptian Multiplication
+def egyptian_multiplication(a, b):
+    ans = []
+    while abs(a) >= 1 and abs(a) > 0:
+        if (a % 2 != 0 and a > 0):
+            ans.append(b)
+        elif (a % 2 != 0 and a < 0):
+            ans.append(-b)
+        print(f"halve {a}, double {b}")
+        a = int(a/2)
+        b *= 2
+    print(f"add {[abs(num) for num in ans]}")
+    print(f"Answer: {sum(ans)}")
 
-ans = []
-while True:
-    try:   
-        a = int(input("Enter a number: "))
-        b = int(input("Enter a number: "))
-        break
-    except ValueError:
-        print("Invalid input")
-while (a >= 1 and a > 0) or (a <= -1 and a < 0):
-    if (a % 2 != 0 and a > 0):
-        ans.append(b)
-        print(f"add {b}")
-    elif (a % 2 != 0 and a < 0):
-        ans.append(-b)
-        print(f"add {-b}")
-    a //= 2
-    b *= 2
-print(f"Answer: {sum(ans)}")
+def main():
+    egyptian_multiplication(-12, 5)
+
+if __name__ == "__main__":
+    main()
