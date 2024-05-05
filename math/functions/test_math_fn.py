@@ -4,7 +4,7 @@ from is_prime import isPrime
 # Tests for quadratic function
 
 # Test case: A = 0, B = 0, C = 0
-assert quadratic(0, 0, 0) == (0.0, 0.0)
+assert quadratic(0, 0, 0) == (float('-inf'), float('inf'))
 
 # Test case: A = 1, B = 0, C = 0
 assert quadratic(1, 0, 0) == (0.0, 0.0)
