@@ -1,7 +1,4 @@
 odd.txt
 primes.txt
 env.txt
-math/functions/__pycache__/test_quadratic.cpython-312-pytest-8.1.2.pyc
-math/functions/__pycache__/quadratic.cpython-312.pyc
-math/functions/__pycache__/test_math_fn.cpython-312-pytest-8.1.2.pyc
-math/functions/__pycache__/is_prime.cpython-312.pyc
+math/functions/__pycache__/
